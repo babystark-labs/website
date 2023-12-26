@@ -12,10 +12,10 @@ const commonTheme = {
   white: colors.white,
   black: colors.black,
 
-  gradient1: 'linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%)',
-  flatGradient1: 'linear-gradient(225deg, #933FFE 14.89%, #933FFE 85.85%)',
+  gradient1: 'linear-gradient(225deg, #F9D423 14.89%, #FF4E50 85.85%)',
+  gradient2: 'linear-gradient(52deg, #fe4e50 -11.18%, #ffac7d 58.92%, #a9c4f3 98.44%)',
 
-  accent1: '#933FFE',
+  accent1: '#FF4E50',
 }
 
 export const darkTheme = {

@@ -18,16 +18,26 @@ const Background = styled.span`
   left: 0;
   height: 100vh;
   max-height: 1000px;
-  background-image: linear-gradient(
-      to bottom,
-      ${({ theme }) => transparentize(1, theme.bg1)},
-      ${({ theme }) => theme.bg1}
-    ),
-    url('${background}');
+  background-image: url('${background}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+      to bottom,
+      ${({ theme }) => transparentize(0.3, theme.bg1)},
+      ${({ theme }) => theme.bg1}
+    );
+  }
 `
 
 const Section = styled.section`
@@ -64,8 +74,14 @@ const SecondArticle = styled.div`
   gap: 20px;
   margin-top: 150px;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-auto-rows: 1fr;
+  justify-content: center;
+
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
 `
 
 const Card = styled(Column)`
@@ -73,8 +89,12 @@ const Card = styled(Column)`
   padding: 32px 24px 24px;
   gap: 16px;
   border-radius: 24px;
-  max-width: 380px;
   text-align: center;
+  max-width: 720px;
+
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    max-width: 380px;
+  }
 `
 
 const CardIcon = styled(Row)<{ icon: string }>`
@@ -103,7 +123,7 @@ const CardIcon = styled(Row)<{ icon: string }>`
     bottom: 20px;
     right: 20px;
     left: 20px;
-    background: linear-gradient(52deg, #982dec -11.18%, #dc8df8 58.92%, #a9c4f3 98.44%);
+    background: ${({ theme }) => theme.gradient2};
     -webkit-mask-image: url('${({ icon }) => icon}');
     mask-image: url('${({ icon }) => icon}');
     -webkit-mask-repeat: no-repeat;
