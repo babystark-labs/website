@@ -1,6 +1,7 @@
 import ArrowsIcon from 'assets/arrows.svg'
 import background from 'assets/background.png'
 import logo from 'assets/logo.png'
+import LogoText from 'assets/logo-text.png'
 import WalletIcon from 'assets/wallet.svg'
 import YieldIcon from 'assets/yield.svg'
 import { PrimaryButton } from 'components/Button'
@@ -42,11 +43,15 @@ const Background = styled.span`
 
 const Section = styled.section`
   width: 100%;
-  padding: 16px 12px 96px;
+  padding: 64px 12px 96px;
   max-width: ${({ theme }) => theme.maxWidth};
   margin: -24px auto 0;
 
-  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    padding-top: 32px;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     padding-top: 0;
   }
 `
@@ -58,6 +63,20 @@ const FirstArticle = styled(Column)`
   width: 100%;
 `
 
+const Title = styled.img`
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+`
+
+const Motto = styled(ThemedText.Hero)`
+  font-size: 48px !important;
+
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    font-size: 64px !important;
+  }
+`
+
 const SocialButton = styled(PrimaryButton)`
   width: 156px;
 `
@@ -67,12 +86,20 @@ const Logo = styled.img`
   height: 200px;
 `
 
+const SocialContainer = styled(Column)`
+  gap: 28px;
+
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    flex-direction: row;
+  }
+`
+
 // Second article
 
 const SecondArticle = styled.div`
   display: grid;
   gap: 20px;
-  margin-top: 150px;
+  margin-top: 100px;
   width: 100%;
   grid-template-rows: repeat(3, 1fr);
   grid-auto-rows: 1fr;
@@ -81,6 +108,10 @@ const SecondArticle = styled.div`
   @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    margin-top: 150px;
   }
 `
 
@@ -101,7 +132,7 @@ const CardIcon = styled(Row)<{ icon: string }>`
   width: 80px;
   height: 80px;
   border-radius: 40px;
-  background: linear-gradient(-45deg, #6c5abd, #57585e, #a6a7a9);
+  background: linear-gradient(-45deg, ${({ theme }) => theme.accent1}, #57585e, #a6a7a9);
   position: relative;
   justify-content: center;
 
@@ -150,24 +181,24 @@ export default function HomePage() {
 
       <Section>
         <FirstArticle>
-          <ThemedText.Hero textAlign="center">BabyStark</ThemedText.Hero>
+          <Title src={LogoText} />
 
           <Column gap={28}>
-            <ThemedText.Hero textAlign="center">
+            <Motto textAlign="center">
               THE MEME COIN
               <br />
               YOU WILL LOVE TO HODL_
-            </ThemedText.Hero>
+            </Motto>
 
             <ThemedText.HeadlineSmall textAlign="center" fontWeight={300}>
               #1 auto stacking memecoin : Every Holder, Every Transaction, always Earning
             </ThemedText.HeadlineSmall>
 
-            <Row gap={28}>
+            <SocialContainer>
               <SocialButton>Twitter</SocialButton>
               <Logo src={logo} />
               <SocialButton>Telegram</SocialButton>
-            </Row>
+            </SocialContainer>
           </Column>
 
           <ThemedText.HeadlineSmall textAlign="center" fontWeight={300} lineHeight={1.8}>

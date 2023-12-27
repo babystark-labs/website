@@ -3,7 +3,6 @@ import { Row } from 'components/Flex'
 import { styled } from 'styled-components'
 
 const StyledHeader = styled(Row)`
-  position: sticky;
   top: 0;
   z-index: 1000;
   padding: 20px 24px;
