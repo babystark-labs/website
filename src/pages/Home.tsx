@@ -214,36 +214,32 @@ export default function HomePage() {
           <Card>
             <CardIcon icon={ArrowsIcon} />
 
-            <ThemedText.HeadlineLarge>True Decentralization</ThemedText.HeadlineLarge>
+            <ThemedText.HeadlineLarge>Auto-staking</ThemedText.HeadlineLarge>
 
             <ThemedText.BodySecondary lineHeight={1.5}>
-              The RFI smart contract was fully developed and operational from the start. It did not undergo an Initial
-              Coin Offering (ICO), pre-sale, or any form of fundraising. All features have been incorporated, with no
-              additional features pending. The value of RFI does not depend on any individual or team
+              Fix marketcap. Swap fees are collected and redistributed fair share to all holders.
             </ThemedText.BodySecondary>
           </Card>
 
           <Card>
             <CardIcon icon={YieldIcon} />
 
-            <ThemedText.HeadlineLarge>Yield Capability</ThemedText.HeadlineLarge>
+            <ThemedText.HeadlineLarge>UX & Decentralization</ThemedText.HeadlineLarge>
 
             <ThemedText.BodySecondary lineHeight={1.5}>
-              the RFI smart contract introduces several new methods that enable staking contracts to accurately
-              calculate the fees accrued by each holder over any given period, even when their funds are combined. This
-              significant advancement makes it possible to directly stake RFI.
+             No stacking or extra layer of smart contracts. Just hodl your $BSTARKs
+             At launch a specific focus care will be processed to garante a fair and large distribution. (whales and bot limitation measures)
+
             </ThemedText.BodySecondary>
           </Card>
 
           <Card>
             <CardIcon icon={WalletIcon} />
 
-            <ThemedText.HeadlineLarge>Improve ROI</ThemedText.HeadlineLarge>
+            <ThemedText.HeadlineLarge>Focus on long term ROI</ThemedText.HeadlineLarge>
 
             <ThemedText.BodySecondary lineHeight={1.5}>
-              As a result, holders of the token receive 100% of the generated fees. The proportion of fees you earn is
-              determined by your share of RFI ownership among all holders. This system results in significantly higher
-              yields than would otherwise be achievable.
+              Around one vision : leverage starknet UX & computation to make the best memecoin community EVER
             </ThemedText.BodySecondary>
           </Card>
         </SecondArticle>
